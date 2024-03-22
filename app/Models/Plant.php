@@ -17,5 +17,10 @@ class Plant extends Model
         'care',
         'height',
         'plant_image',
+        'supplier',
     ];
+
+    public function suppliers() {
+        return $this->belongsToMany(Supplier::class)->withTimestamps();
+    }
 }

@@ -15,4 +15,6 @@ class PlantsTableSeeder extends Seeder
     {
         Plant::factory(10)->create();
     }
+
+    
 }

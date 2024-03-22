@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('care');
             $table->string('height');
+            $table->string('supplier');
             $table->string('plant_image')->nullable();
             $table->timestamps();
         });

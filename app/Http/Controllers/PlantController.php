@@ -63,6 +63,7 @@ class PlantController extends Controller
             'care' => 'required',
             'height' => 'required',
             'plant_image' => 'required|image',
+            'supplier' => 'required',
         ]);
 
         if ($request->hasFile('plant_image')) {
@@ -79,7 +80,8 @@ class PlantController extends Controller
             'description' => $request->description,
             'care' => $request->care,
             'height' => $request->height,
-            'plant_image' => $plant_image_name
+            'plant_image' => $plant_image_name,
+            'supplier' => $request->supplier,
         ]);
 
         return to_route('plants.show', $plant)->with('success', 'Plant updated successfully');

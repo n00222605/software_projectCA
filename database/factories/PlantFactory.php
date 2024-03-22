@@ -24,6 +24,7 @@ class PlantFactory extends Factory
             'care' => fake()->paragraph,
             'height' => fake()->word,
             'plant_image' => fake()->imageUrl,
+            'supplier' => fake()->word,
             'created_at' => now(),
             'updated_at' => now(),
         ];

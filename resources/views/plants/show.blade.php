@@ -48,6 +48,13 @@
                                 <td class="font-bold ">Height </td>
                                 <td>{{ $plant->height }}</td>
                             </tr>
+
+                            @foreach ($plant->suppliers as $supplier)
+                                <tr>
+                                    <td class="font-bold ">Suppliers </td>
+                                    <td>{{ $supplier->name }}</td>
+                                </tr>
+                            @endforeach
                             
                         </tbody>
                     </table>

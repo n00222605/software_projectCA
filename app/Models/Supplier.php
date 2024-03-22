@@ -14,4 +14,8 @@ class Supplier extends Model
         'address',
         'email',
     ];
+
+    public function plants(){
+        return $this->belongsToMany(Plant::class)->withTimestamps();
+    }
 }

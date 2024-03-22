@@ -74,6 +74,15 @@
                         :value="@old('plant_image')">>
                     </x-file-input>
 
+                    <x-text-input
+                        type="text"
+                        name="supplier"
+                        field="title"
+                        placeholder="Supplier"
+                        class="w-full"
+                        autocomplete="off"
+                        :value="@old('supplier')"></x-text-input>
+
                     <x-primary-button class="mt-6">Save Plant</x-primary-button>
                 </form>
             </div>
