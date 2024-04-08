@@ -13,7 +13,7 @@
                     <table class="table table-hover">
                         <tbody>
                             <tr>
-                                <td rowspan="6">
+                                <td rowspan="8">
                                     <!-- use the asset function, access the file $plant->plant_image in the folder storage/images -->
                                     <img src="{{asset('storage/images/' . $plant->plant_image) }}" width="150" />
                                 </td>
@@ -49,13 +49,15 @@
                                 <td>{{ $plant->height }}</td>
                             </tr>
 
-                            @foreach ($plant->suppliers as $supplier)
-                                <tr>
-                                    <td class="font-bold ">Suppliers </td>
-                                    <td>{{ $supplier->name }}</td>
-                                </tr>
-                            @endforeach
-                            
+                            <tr>
+                                <td class="font-bold ">Suppliers </td>
+                                <td>
+                                    @foreach ($plant->suppliers as $supplier)
+                                    {{ $supplier->name }},
+                                    @endforeach
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
                     <x-primary-button><a href="{{ route('plants.edit', $plant)}}">Edit</a></x-primary-button>

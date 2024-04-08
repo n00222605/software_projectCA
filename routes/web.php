@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UploadController;
+use App\Models\Upload;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +34,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('plants', PlantController::class);
 Route::resource('suppliers', SupplierController::class);
+Route::resource('uploads', UploadController::class);
 
 require __DIR__.'/auth.php';
