@@ -17,7 +17,12 @@ class UploadFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'filename' => fake()->word,
+            'user_id'=>fake()->word,
+            'plant_id'=>fake()->word,
+            'upload_image'=>fake()->imageUrl,
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

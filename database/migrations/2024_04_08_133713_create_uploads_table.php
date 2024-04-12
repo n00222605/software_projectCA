@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('filename');
             $table->integer('user_id');
             $table->integer('plant_id');
+            $table->integer('upload_image');
             $table->timestamps();
         });
     }

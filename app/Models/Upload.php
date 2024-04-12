@@ -13,5 +13,6 @@ class Upload extends Model
         'filename',
         'user_id',
         'plant_id',
+        'upload_image',
     ];
 }

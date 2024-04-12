@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Upload;
 
 class UploadSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class UploadSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Upload::factory(1)->create();
     }
 }
