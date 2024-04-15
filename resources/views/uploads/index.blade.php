@@ -15,13 +15,13 @@
             @forelse ($uploads as $upload)
             <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                 <h2 class="font-bold text-2xl">
-                    <a href="{{ route('uploads.show', $upload) }}">{{ $upload->filename }}</a>
+                    <a href="{{ route('uploads.show', $upload) }}">{{ $upload->plant->common_name }}</a>
                 </h2>
                 <p class="mt-2">
                     {{ $upload->user_id }}
-                    {{$upload->plant_id}}
+                    {{$upload->location}}
                     @if ($upload->upload_image)
-                    <img src="{{ $upload->upload_image }}" alt="{{ $upload->filename }}" width="100">
+                    <img src="{{ $upload->upload_image }}" alt="{{ $upload->location }}" width="100">
                     @else
                     No Image
                     @endif

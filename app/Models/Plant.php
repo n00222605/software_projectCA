@@ -23,4 +23,8 @@ class Plant extends Model
     public function suppliers() {
         return $this->belongsToMany(Supplier::class)->withTimestamps();
     }
+
+    public function uploads(){
+        return $this->hasMany(Upload::class);
+    }
 }

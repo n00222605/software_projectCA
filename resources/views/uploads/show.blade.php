@@ -20,8 +20,8 @@
                             </tr>
 
                             <tr>
-                                <td class="font-bold ">Name</td>
-                                <td>{{ $upload->filename }}</td>
+                                <td class="font-bold ">Plant Name </td>
+                                <td>{{ $upload->plant_id }}</td>
                             </tr>
 
                             <tr>
@@ -30,8 +30,8 @@
                             </tr>
 
                             <tr>
-                                <td class="font-bold ">Plant Name </td>
-                                <td>{{ $upload->plant_id }}</td>
+                                <td class="font-bold ">Location</td>
+                                <td>{{ $upload->location }}</td>
                             </tr>
 
                         </tbody>

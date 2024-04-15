@@ -12,17 +12,17 @@
                     @csrf
                     <x-text-input
                         type="text"
-                        name="filename"
-                        field="title"
-                        placeholder="File name"
+                        name="location"
+                        field="location"
+                        placeholder="Location"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('filename')"></x-text-input>
+                        :value="@old('location')"></x-text-input>
 
-                    <x-text-input
+                    <!-- <x-text-input
                         type="text"
                         name="user_id"
-                        field="title"
+                        field="user_id"
                         placeholder="User name"
                         class="w-full"
                         autocomplete="off"
@@ -31,18 +31,18 @@
                     <x-text-input
                         type="text"
                         name="plant_id"
-                        field="title"
+                        field="plant_id"
                         placeholder="Plant name"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('plant_id')"></x-text-input>
+                        :value="@old('plant_id')"></x-text-input> -->
                   
                     <x-file-input
                         type="file"
-                        name="plant_image"
+                        name="upload_image"
                         placeholder="Plant"
                         class="w-full mt-6"
-                        field="plant_image"
+                        field="upload_image"
                         :value="@old('upload_image')">>
                     </x-file-input>
 

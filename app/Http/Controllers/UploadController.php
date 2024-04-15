@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUploadRequest;
 use App\Http\Requests\UpdateUploadRequest;
 use App\Models\Upload;
+use App\Models\Plant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UploadController extends Controller
 {
@@ -32,9 +34,9 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'filename' => 'required',
-            'user_id' => 'required',
-            'plant_id' => 'required',
+            'location' => 'required',
+            // 'user_id' => 'required',
+            // 'plant_id' => 'required',
             'upload_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -47,13 +49,13 @@ class UploadController extends Controller
         } else {
             $image_name = null;
         }
-
+        
         // Create a new upload record
         Upload::create([
-            'filename' => $request->filename,
-            'user_id' => $request->user_id,
-            'plant_id' => $request->plant_id,
-            'upload_image' => $upload_image_name, // Assign the image name to the 'bike_image' column
+            'location' => $request->location,
+            'user_id' => Auth::user()->name,
+            'plant_id' => Plant::inRandomOrder()->value('id'),
+            'upload_image' => $upload_image_name, 
         ]);
 
         return redirect()->route('uploads.index'); // Corrected method to redirect to index route

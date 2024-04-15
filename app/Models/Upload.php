@@ -10,9 +10,13 @@ class Upload extends Model
     use HasFactory;
 
     protected $fillable = [
-        'filename',
+        'location',
         'user_id',
         'plant_id',
         'upload_image',
     ];
+
+    public function plant(){
+        return $this->belongsTo(Plant::class);
+    }
 }
