@@ -22,7 +22,7 @@
 
                             <tr>
                                 <td class="font-bold ">Plant Name </td>
-                                <td>{{ $upload->plant->common_name }}</td>
+                                <td><a href="{{ route('plants.show', ['plant' => $upload->plant->id]) }}">{{ $upload->plant->common_name }}</a></td>
                             </tr>
 
                             <tr>

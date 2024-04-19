@@ -10,33 +10,7 @@
             <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                 <form action="{{ route('uploads.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <x-text-input
-                        type="text"
-                        name="location"
-                        field="location"
-                        placeholder="Location"
-                        class="w-full"
-                        autocomplete="off"
-                        :value="@old('location')"></x-text-input>
 
-                    <!-- <x-text-input
-                        type="text"
-                        name="user_id"
-                        field="user_id"
-                        placeholder="User name"
-                        class="w-full"
-                        autocomplete="off"
-                        :value="@old('user_id')"></x-text-input>
-
-                    <x-text-input
-                        type="text"
-                        name="plant_id"
-                        field="plant_id"
-                        placeholder="Plant name"
-                        class="w-full"
-                        autocomplete="off"
-                        :value="@old('plant_id')"></x-text-input> -->
-                  
                     <x-file-input
                         type="file"
                         name="upload_image"
@@ -45,6 +19,18 @@
                         field="upload_image"
                         :value="@old('upload_image')">>
                     </x-file-input>
+
+                    <div class="w-1/6 pt-6">
+                        <x-county-dropdown
+                            name="location"
+                            field="location"
+                            placeholder="Location"
+                            class="w-full"
+                            :selected="old('location')"
+                            :counties="['Antrim', 'Armagh', 'Carlow', 'Cavan', 'Clare', 'Cork', 'Derry', 'Donegal', 'Down', 'Dublin', 'Fermanagh', 'Galway', 'Kerry', 'Kildare', 'Kilkenny', 'Laois', 'Leitrim', 'Limerick', 'Longford', 'Louth', 'Mayo', 'Meath', 'Monaghan', 'Offaly', 'Roscommon', 'Sligo', 'Tipperary', 'Tyrone', 'Waterford', 'Westmeath', 'Wexford', 'Wicklow']"
+                        />
+                    </div>
+
 
                     <x-primary-button class="mt-6">Save Upload</x-primary-button>
                 </form>
