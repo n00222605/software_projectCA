@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Upload;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Upload>
+ * This is the factory class for the Upload model.
  */
 class UploadFactory extends Factory
 {
@@ -16,11 +17,12 @@ class UploadFactory extends Factory
      */
     public function definition(): array
     {
+        // Define the default state of the Upload model
         return [
-            'location' => fake()->word,
+            'location' => $this->faker->word,
             // 'user_id'=>fake()->word,
             // 'plant_id'=>fake()->word,
-            'upload_image'=>fake()->imageUrl,
+            'upload_image' => $this->faker->imageUrl,
             'created_at' => now(),
             'updated_at' => now(),
         ];

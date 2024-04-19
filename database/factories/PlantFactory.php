@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Plant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Plant>
+ * This is the factory class for the Plant model.
  */
 class PlantFactory extends Factory
 {
@@ -16,15 +17,16 @@ class PlantFactory extends Factory
      */
     public function definition(): array
     {
+        // Define the default state of the Plant model
         return [
-            'scientific_name' => fake()->word,
-            'common_name' => fake()->word,
-            'family' => fake()->word,
-            'description' => fake()->paragraph,
-            'care' => fake()->paragraph,
-            'height' => fake()->word,
-            'plant_image' => fake()->imageUrl,
-            'supplier' => fake()->word,
+            'scientific_name' => $this->faker->word,
+            'common_name' => $this->faker->word,
+            'family' => $this->faker->word,
+            'description' => $this->faker->paragraph,
+            'care' => $this->faker->paragraph,
+            'height' => $this->faker->word,
+            'plant_image' => $this->faker->imageUrl,
+            'supplier' => $this->faker->word,
             'created_at' => now(),
             'updated_at' => now(),
         ];

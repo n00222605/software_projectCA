@@ -16,7 +16,10 @@ class UploadController extends Controller
      */
     public function index()
     {
+        // Retrieve all uploads from the database
         $uploads = Upload::all();
+        
+        // Return the view with the list of uploads
         return view('uploads.index', compact('uploads'));
     }
 
@@ -25,6 +28,7 @@ class UploadController extends Controller
      */
     public function create()
     {
+        // Return the view for creating a new upload
         return view('uploads.create');
     }
 
@@ -33,10 +37,9 @@ class UploadController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate the request data
         $request->validate([
             'location' => 'required',
-            // 'user_id' => 'required',
-            // 'plant_id' => 'required',
             'upload_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -47,18 +50,19 @@ class UploadController extends Controller
             $image->storeAs('public/uploads', $image_name);
             $upload_image_name = 'storage/uploads/' . $image_name;
         } else {
-            $image_name = null;
+            $upload_image_name = null;
         }
         
         // Create a new upload record
         Upload::create([
             'location' => $request->location,
-            'user_id' => Auth::user()->name,
+            'user_id' => Auth::user()->id, // Corrected user ID retrieval
             'plant_id' => Plant::inRandomOrder()->value('id'),
             'upload_image' => $upload_image_name, 
         ]);
 
-        return redirect()->route('uploads.index'); // Corrected method to redirect to index route
+        // Redirect to the index route after successful upload
+        return redirect()->route('uploads.index');
     }
 
     /**
@@ -66,7 +70,10 @@ class UploadController extends Controller
      */
     public function show($id)
     {
+        // Find the upload by its ID
         $upload = Upload::find($id);
+        
+        // Return the view with the upload details
         return view('uploads.show')->with('upload', $upload);
     }
 }

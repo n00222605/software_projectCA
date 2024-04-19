@@ -32,8 +32,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Resource routes for managing plants
 Route::resource('plants', PlantController::class);
+
+// Resource routes for managing suppliers
 Route::resource('suppliers', SupplierController::class);
+
+// Resource routes for managing uploads
 Route::resource('uploads', UploadController::class);
 
 require __DIR__.'/auth.php';

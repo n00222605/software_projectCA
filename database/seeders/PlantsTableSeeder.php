@@ -14,6 +14,9 @@ class PlantsTableSeeder extends Seeder
     public function run(): void
     {
         // Plant::factory(10)->create();
+
+        // Creates and saves plants
+        
         $p1 = new Plant();
         $p1->scientific_name = 'Digitalis purpurea';
         $p1->common_name = 'Foxglove';
@@ -134,7 +137,7 @@ class PlantsTableSeeder extends Seeder
         $p11->plant_image = '/storage/plants/blackthorn.jpg';
         $p11->supplier = '';
         $p11->save();
-
+        
         $p12 = new Plant();
         $p12->scientific_name = 'Ulex europaeus';
         $p12->common_name = 'Gorse';

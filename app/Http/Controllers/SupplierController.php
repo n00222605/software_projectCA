@@ -13,7 +13,10 @@ class SupplierController extends Controller
      */
     public function index()
     {
+        // Retrieve all suppliers from the database
         $suppliers = Supplier::all();
+        
+        // Return the view with the list of suppliers
         return view('suppliers.index', compact('suppliers'));
     }
 
@@ -22,7 +25,10 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
+        // Find the supplier by its ID
         $supplier = Supplier::find($id);
+        
+        // Return the view with the supplier details
         return view('suppliers.show')->with('supplier', $supplier);
     }
 }

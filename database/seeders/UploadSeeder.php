@@ -13,6 +13,7 @@ class UploadSeeder extends Seeder
      */
     public function run(): void
     {
+        //seeds 1 upload
         Upload::factory(1)->create();
     }
 }

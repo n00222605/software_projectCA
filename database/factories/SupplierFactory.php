@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Supplier;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Supplier>
+ * This is the factory class for the Supplier model.
  */
 class SupplierFactory extends Factory
 {
@@ -16,10 +17,11 @@ class SupplierFactory extends Factory
      */
     public function definition(): array
     {
+        // Define the default state of the Supplier model
         return [
-            'name' => fake()->word,
-            'address' => fake()->sentence(5),
-            'email' => fake()->email,
+            'name' => $this->faker->word,
+            'address' => $this->faker->sentence(5),
+            'email' => $this->faker->email,
         ];
     }
 }

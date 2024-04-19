@@ -14,7 +14,7 @@ class SupplierSeeder extends Seeder
      */
     public function run(): void
     {
-        //Supplier::factory(3)->create();
+        // Create three supplier instances
         $s1 = new Supplier();
         $s1->name = 'Woodies';
         $s1->address = 'Tallaght';
@@ -33,6 +33,7 @@ class SupplierSeeder extends Seeder
         $s3->email = 'landscapedepot@gmail.com';
         $s3->save();
 
+        // Associate suppliers with plants
         foreach(Plant::all() as $plant){
             $suppliers = Supplier::inRandomOrder()->take(rand(1, 3))->pluck('id');
             $plant->suppliers()->attach($suppliers);

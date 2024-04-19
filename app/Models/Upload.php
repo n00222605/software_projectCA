@@ -9,6 +9,7 @@ class Upload extends Model
 {
     use HasFactory;
 
+    // Define the fillable fields that can be mass-assigned
     protected $fillable = [
         'location',
         'user_id',
@@ -16,7 +17,9 @@ class Upload extends Model
         'upload_image',
     ];
 
+    // Define the relationship with the Plant model
     public function plant(){
+        // An upload belongs to a plant
         return $this->belongsTo(Plant::class);
     }
 }

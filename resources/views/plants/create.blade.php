@@ -1,15 +1,19 @@
 <x-app-layout>
+    <!-- Define the header section of the layout -->
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create Plant') }}
+            {{ __('Create Plant') }} <!-- Display the title "Create Plant" -->
         </h2>
     </x-slot>
 
+    <!-- Page Content -->
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <!-- Form for creating a new plant -->
             <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                 <form action="{{ route('plants.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <!-- Text input for scientific name -->
                     <x-text-input
                         type="text"
                         name="scientific_name"
@@ -17,8 +21,10 @@
                         placeholder="Scientific Name"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('scientific_name')"></x-text-input>
+                        :value="@old('scientific_name')">
+                    </x-text-input>
 
+                    <!-- Text input for common name -->
                     <x-text-input
                         type="text"
                         name="common_name"
@@ -26,8 +32,10 @@
                         placeholder="Common Name"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('common_name')"></x-text-input>
+                        :value="@old('common_name')">
+                    </x-text-input>
 
+                    <!-- Text input for family -->
                     <x-text-input
                         type="text"
                         name="family"
@@ -35,9 +43,10 @@
                         placeholder="Family"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('family')"></x-text-input>
+                        :value="@old('family')">
+                    </x-text-input>
 
-                    <!-- I created a new component called textarea, you will need to do the same to using the x-textarea component -->
+                    <!-- Textarea input for description -->
                     <x-textarea
                         name="description"
                         rows="10"
@@ -47,6 +56,7 @@
                         :value="@old('description')">
                     </x-textarea>
 
+                    <!-- Textarea input for care -->
                     <x-textarea
                         name="care"
                         rows="5"
@@ -56,6 +66,7 @@
                         :value="@old('care')">
                     </x-textarea>
 
+                    <!-- Text input for height -->
                     <x-text-input
                         type="text"
                         name="height"
@@ -63,17 +74,20 @@
                         placeholder="Height"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('height')"></x-text-input>
+                        :value="@old('height')">
+                    </x-text-input>
                   
+                    <!-- File input for plant image -->
                     <x-file-input
                         type="file"
                         name="plant_image"
                         placeholder="Plant"
                         class="w-full mt-6"
                         field="plant_image"
-                        :value="@old('plant_image')">>
+                        :value="@old('plant_image')">
                     </x-file-input>
 
+                    <!-- Text input for supplier -->
                     <x-text-input
                         type="text"
                         name="supplier"
@@ -81,8 +95,10 @@
                         placeholder="Supplier"
                         class="w-full"
                         autocomplete="off"
-                        :value="@old('supplier')"></x-text-input>
+                        :value="@old('supplier')">
+                    </x-text-input>
 
+                    <!-- Button to submit form -->
                     <x-primary-button class="mt-6">Save Plant</x-primary-button>
                 </form>
             </div>
