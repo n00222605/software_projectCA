@@ -69,28 +69,4 @@ class UploadController extends Controller
         $upload = Upload::find($id);
         return view('uploads.show')->with('upload', $upload);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Upload $upload)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Upload $upload)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Upload $upload)
-    {
-        //
-    }
 }

@@ -1,8 +1,8 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0 w-full z-50" style="background-color: #f0c065;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex ">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
@@ -25,13 +25,13 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('suppliers.index')" :active="request()->routeIs('suppliers.index')">
-                        {{ __('All Suppliers') }}
+                        {{ __('Suppliers') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('uploads.index')" :active="request()->routeIs('uploads.index')">
-                        {{ __('My Library') }}
+                        {{ __('Home') }}
                     </x-nav-link>
                 </div>
             </div>

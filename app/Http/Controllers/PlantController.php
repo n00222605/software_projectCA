@@ -25,14 +25,6 @@ class PlantController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show($id)
@@ -85,13 +77,5 @@ class PlantController extends Controller
         ]);
 
         return to_route('plants.show', $plant)->with('success', 'Plant updated successfully');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

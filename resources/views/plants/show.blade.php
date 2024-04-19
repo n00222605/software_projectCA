@@ -8,58 +8,48 @@
     <!-- Page Content -->
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <td rowspan="8">
-                                    <img src="{{asset($plant->plant_image) }}" width="1500" />
-                                </td>
-                            </tr>
+            <div class="bg-white shadow-xl sm:rounded-lg">
+                <div class="my-6 p-6 bg-yellow-100 border-b border-gray-200 shadow-sm sm:rounded-lg">
+                    <!-- Scientific Name and Common Name -->
+                    <div class="font-bold text-lg mb-1">
+                        <span class="font-bold">Scientific Name:</span> {{ $plant->scientific_name }}
+                    </div>
+                    <div class="font-bold text-lg mb-1">
+                        <span class="font-bold">Common Name:</span> {{ $plant->common_name }}
+                    </div>
 
-                            <tr valign="top">
-                                <td class="font-bold" >Scientific Name: </td>
-                                <td valign="top">{{ $plant->scientific_name }}</td>
-                            </tr>
+                    <!-- Display Plant Image -->
+                    <div class="flex justify-center">
+                        <img src="{{ asset($plant->plant_image) }}" class="w-64 h-auto" alt="Plant Image">
+                    </div>
 
-                            <tr valign="top">
-                                <td class="font-bold ">Common Name: </td>
-                                <td valign="top">{{ $plant->common_name }}</td>
-                            </tr>
+                    <!-- Other Details -->
+                    <div class="mt-6">
+                        <!-- Family -->
+                        <div class="text-gray-700">
+                            <span class="font-bold text-gray-900">Family:</span> {{ $plant->family }}
+                        </div>
+                        <!-- Description -->
+                        <div class="text-gray-700">
+                            <span class="font-bold text-gray-900">Description:</span> {{ $plant->description }}
+                        </div>
+                        <!-- Care -->
+                        <div class="text-gray-700">
+                            <span class="font-bold text-gray-900">Care:</span> {{ $plant->care }}
+                        </div>
+                        <!-- Height -->
+                        <div class="text-gray-700">
+                            <span class="font-bold text-gray-900">Height:</span> {{ $plant->height }}
+                        </div>
+                        <!-- Suppliers -->
+                        <div class="mt-4 text-gray-700">
+                            <span class="font-bold text-gray-900">Suppliers:</span>
+                            @foreach ($plant->suppliers as $supplier)
+                            <span class="font-bold text-blue-500 hover:underline"><a href="{{ route('suppliers.show', $supplier) }}">{{ $supplier->name }}</span></a>,
+                            @endforeach
+                        </div>
 
-                            <tr valign="top">
-                                <td class="font-bold ">Family: </td>
-                                <td valign="top">{{ $plant->family }}</td>
-                            </tr>
-
-                            <tr valign="top">
-                                <td class="font-bold">Description: </td>
-                                <td valign="top">{{ $plant->description }}</td>
-                            </tr>
-
-                            <tr valign="top">
-                                <td class="font-bold ">Care: </td>
-                                <td valign="top">{{ $plant->care }}</td>
-                            </tr>
-
-                            <tr valign="top">
-                                <td class="font-bold ">Height: </td>
-                                <td valign="top">{{ $plant->height }}</td>
-                            </tr>
-
-                            <tr valign="top">
-                                <td class="font-bold ">Suppliers: </td>
-                                <td valign="top">
-                                    @foreach ($plant->suppliers as $supplier)
-                                    {{ $supplier->name }},
-                                    @endforeach
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                    <x-primary-button><a href="{{ route('plants.edit', $plant)}}">Edit</a></x-primary-button>
+                    </div>
                 </div>
             </div>
         </div>

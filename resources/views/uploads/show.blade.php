@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold text-2xl text-gray-800 leading-tight mb-4">
             Dashboard
         </h2>
     </x-slot>
@@ -8,35 +8,27 @@
     <!-- Page Content -->
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <td rowspan="8">
-                                    <!-- use the asset function, access the file $plant->plant_image in the folder storage/images -->
-                                    <img src="{{ asset($upload->upload_image) }}" width="100">
-
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="font-bold ">Plant Name </td>
-                                <td><a href="{{ route('plants.show', ['plant' => $upload->plant->id]) }}">{{ $upload->plant->common_name }}</a></td>
-                            </tr>
-
-                            <tr>
-                                <td class="font-bold ">Uploaded By </td>
-                                <td>{{ $upload->user_id }}</td>
-                            </tr>
-
-                            <tr>
-                                <td class="font-bold ">Location</td>
-                                <td>{{ $upload->location }}</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+            <div class="bg-white shadow-xl sm:rounded-lg">
+                <div class="my-12 p-12 bg-yellow-100 border-b border-gray-200 shadow-sm sm:rounded-lg flex items-center justify-center">
+                    <div class="mr-12">
+                        <!-- Display Plant Image -->
+                        <img src="{{ asset($upload->upload_image) }}" class="sm:rounded-lg" alt="Plant Image">
+                    </div>
+                    <div>
+                        <!-- Plant Name -->
+                        <div class="font-bold text-3xl mb-8">
+                            <span class="font-bold">Plant Name:</span>
+                            <a href="{{ route('plants.show', ['plant' => $upload->plant->id]) }}" class="text-blue-500 hover:underline">{{ $upload->plant->common_name }}</a>
+                        </div>
+                        <!-- Uploaded By -->
+                        <div class="text-gray-700 mb-2">
+                            Uploaded By: {{ $upload->user_id }}
+                        </div>
+                        <!-- Location -->
+                        <div class="text-gray-700 mb-2">
+                            Location: {{ $upload->location }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
