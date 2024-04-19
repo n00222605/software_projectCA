@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('uploads', function (Blueprint $table) {
             $table->id();
             $table->string('location');
-            // $table->string('user_id');
-            // $table->integer('plant_id');
+            $table->string('user_id');
+       //   $table->integer('plant_id');
             $table->string('upload_image');
             $table->timestamps();
         });

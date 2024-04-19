@@ -15,13 +15,14 @@
                             <tr>
                                 <td rowspan="8">
                                     <!-- use the asset function, access the file $plant->plant_image in the folder storage/images -->
-                                    <img src="{{asset('storage/images/' . $upload->upload_image) }}" width="150" />
+                                    <img src="{{ asset($upload->upload_image) }}" width="100">
+
                                 </td>
                             </tr>
 
                             <tr>
                                 <td class="font-bold ">Plant Name </td>
-                                <td>{{ $upload->plant_id }}</td>
+                                <td>{{ $upload->plant->common_name }}</td>
                             </tr>
 
                             <tr>

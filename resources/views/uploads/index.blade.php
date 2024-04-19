@@ -21,7 +21,7 @@
                     {{ $upload->user_id }}
                     {{$upload->location}}
                     @if ($upload->upload_image)
-                    <img src="{{ $upload->upload_image }}" alt="{{ $upload->location }}" width="100">
+                    <img src="{{ asset($upload->upload_image) }}" width="100">
                     @else
                     No Image
                     @endif

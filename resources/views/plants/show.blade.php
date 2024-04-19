@@ -15,7 +15,7 @@
                             <tr>
                                 <td rowspan="8">
                                     <!-- use the asset function, access the file $plant->plant_image in the folder storage/images -->
-                                    <img src="{{asset('storage/images/' . $plant->plant_image) }}" width="150" />
+                                    <img src="{{asset($plant->plant_image) }}" width="1500" />
                                 </td>
                             </tr>
 

@@ -15,7 +15,7 @@ class Supplier extends Model
         'email',
     ];
 
-    public function plants(){
+public function plants(){
         return $this->belongsToMany(Plant::class)->withTimestamps();
     }
 }
